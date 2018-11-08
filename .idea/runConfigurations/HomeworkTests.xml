@@ -1,0 +1,23 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="HomeworkTests" type="tests" factoryName="py.test" singleton="true">
+    <module name="ClionHomework" />
+    <option name="INTERPRETER_OPTIONS" value="" />
+    <option name="PARENT_ENVS" value="true" />
+    <envs>
+      <env name="BUILD_DIR" value="cmake-build-debug" />
+      <env name="DATA_DIR" value="HomeworkTest/homework_resources" />
+    </envs>
+    <option name="SDK_HOME" value="E:\Users\DaAn\Documents\Technion\ClionHomework\venv\Scripts\python.exe" />
+    <option name="WORKING_DIRECTORY" value="" />
+    <option name="IS_MODULE_SDK" value="false" />
+    <option name="ADD_CONTENT_ROOTS" value="true" />
+    <option name="ADD_SOURCE_ROOTS" value="true" />
+    <option name="_new_keywords" value="&quot;&quot;" />
+    <option name="_new_additionalArguments" value="&quot;&quot;" />
+    <option name="_new_target" value="&quot;HomeworkTest&quot;" />
+    <option name="_new_targetType" value="&quot;PATH&quot;" />
+    <method v="2">
+      <option name="RunConfigurationTask" enabled="true" run_configuration_name="Build All" run_configuration_type="CMakeRunConfiguration" />
+    </method>
+  </configuration>
+</component>
