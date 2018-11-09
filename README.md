@@ -43,5 +43,3 @@
     def test_hw3q2(run_homework_and_assert, test_index):
         run_homework_and_assert(3, 2, test_index)
     ```
-
-5
