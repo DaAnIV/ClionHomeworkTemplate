@@ -26,8 +26,8 @@ def print_actual_output(request):
 @pytest.fixture(scope="session")
 def run_homework_and_assert(print_actual_output, print_expected_output, get_input_output, get_question_binary,
                             homework_runner):
-    def __func(homework, question, input_output_index):
-        input_data, expected_output = get_input_output(homework, question, input_output_index)
+    def __func(homework, question, test_index):
+        input_data, expected_output = get_input_output(homework, question, test_index + 1)
         actual_output = homework_runner(get_question_binary(homework, question), input_data)
 
         full_question_name = get_full_question_name(homework, question)
@@ -60,19 +60,19 @@ def homework_runner(request):
 @pytest.fixture(scope="session")
 def get_question_binary(request, build_dir):
     return lambda h, q: build_dir.join('{}.exe'.format(get_full_question_name(h, q))).strpath
-    
+
 
 @pytest.fixture(scope="session")
 def build_dir(request):
     return py.path.local(os.getenv("BUILD_DIR"))
-    
-    
+
+
 @pytest.fixture(scope="session")
 def get_input_output(request, data_dir):
-    def __getter(homework, question, index):
+    def __getter(homework, question, test_index):
         full_question_name = get_full_question_name(homework, question)
-        out_path = data_dir.join('{}out{}.txt'.format(full_question_name, index))
-        in_path = data_dir.join('{}in{}.txt'.format(full_question_name, index))
+        out_path = data_dir.join('{}out{}.txt'.format(full_question_name, test_index))
+        in_path = data_dir.join('{}in{}.txt'.format(full_question_name, test_index))
 
         in_data = ""
         out_data = ""
